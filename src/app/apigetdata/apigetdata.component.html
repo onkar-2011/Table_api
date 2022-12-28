@@ -1,0 +1,37 @@
+
+<div class="container d-flex justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Open</th>
+                        <th>High</th>
+                        <th>low</th>
+                        <th>Close</th>
+                        <th>Volume</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let data of getkey(response['Time Series (5min)'])">
+                        <td>{{ data }}</td>
+                        <td *ngFor="let col of getkey(response['Time Series (5min)'][data])">
+                            {{ response["Time Series (5min)"][data][col]}}
+                        </td>
+                    </tr>
+                    <!-- <tr *ngFor="let data of getkey(response['Time Series (5min)'])">
+                        <td>{{ data }}</td>   
+                        <td>{{ response["Time Series (5min)"][data]["1. open"] }}</td>
+                        <td>{{ response["Time Series (5min)"][data]["2. high"] }}</td>
+                        <td>{{ response["Time Series (5min)"][data]["3. low"] }}</td>
+                        <td>{{ response["Time Series (5min)"][data]["4. close"] }}</td>
+                        <td>{{ response["Time Series (5min)"][data]["5. volume"] }}</td> 
+                    </tr> -->
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</div>
